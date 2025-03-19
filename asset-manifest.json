@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sakasuleiman.github.io/home/static/css/main.fe927caf.css",
+    "main.js": "/sakasuleiman.github.io/home/static/js/main.a7202c24.js",
+    "static/js/787.4b24f717.chunk.js": "/sakasuleiman.github.io/home/static/js/787.4b24f717.chunk.js",
+    "static/media/hashirshoaeb.png": "/sakasuleiman.github.io/home/static/media/hashirshoaeb.23e8b5a1f7de87f03d05.png",
+    "index.html": "/sakasuleiman.github.io/home/index.html",
+    "main.fe927caf.css.map": "/sakasuleiman.github.io/home/static/css/main.fe927caf.css.map",
+    "main.a7202c24.js.map": "/sakasuleiman.github.io/home/static/js/main.a7202c24.js.map",
+    "787.4b24f717.chunk.js.map": "/sakasuleiman.github.io/home/static/js/787.4b24f717.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe927caf.css",
+    "static/js/main.a7202c24.js"
+  ]
+}
