@@ -3,11 +3,10 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 import useResizeObserver from "../hooks/useResizeObserver";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
+import { mainBody, repos, about, skills, research, experience } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
 const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
   const [isTop, setIsTop] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   const navbarMenuRef = React.useRef();
@@ -34,37 +33,16 @@ const Navigation = React.forwardRef((props, ref) => {
   return (
     <Navbar
       ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
-        }`}
+      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"}`}
       expand="lg"
     >
-      <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
-        {`<${mainBody.firstName} />`}
-      </Navbar.Brand>
+      {/* <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
+        {`<${mainBody.lastName} />`}
+      </Navbar.Brand> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
-          {/* {
-            <NavLink className="nav-item lead">
-              <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
-            </NavLink>
-          } */}
-          {repos.show && (
-
-            <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
-            >
-              Projects
-            </NavLink>
-          )}
-          <NavLink
-            className="nav-item lead"
-            href={about.resume}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Resume
-          </NavLink>
+          {/* About Link - First */}
           {about.show && (
             <NavLink
               className="nav-item lead"
@@ -73,6 +51,47 @@ const Navigation = React.forwardRef((props, ref) => {
               About
             </NavLink>
           )}
+
+          {/* Education Link - Second */}
+          {repos.show && (
+            <NavLink
+              className="nav-item lead"
+              href={process.env.PUBLIC_URL + "/#education"}
+            >
+              Education
+            </NavLink>
+          )}
+
+          {/* Experience Link - New */}
+          {experience && experience.show && (
+            <NavLink
+              className="nav-item lead"
+              href={process.env.PUBLIC_URL + "/#experience"}
+            >
+              Experience
+            </NavLink>
+          )}
+
+          {/* Research Link - Third (New) */}
+          {research && research.show && (
+            <NavLink
+              className="nav-item lead"
+              href={process.env.PUBLIC_URL + "/#research"}
+            >
+              Research
+            </NavLink>
+          )}
+
+          {/* Projects Link - Fourth */}
+          {repos.show && (
+            <NavLink
+              href={process.env.PUBLIC_URL + "/#projects"}
+            >
+              Projects
+            </NavLink>
+          )}
+
+          {/* Skills Link - Fifth */}
           {skills.show && (
             <NavLink
               className="nav-item lead"
@@ -81,6 +100,16 @@ const Navigation = React.forwardRef((props, ref) => {
               Skills
             </NavLink>
           )}
+
+          {/* Resume Link - Sixth */}
+          <NavLink
+            className="nav-item lead"
+            href={about.resume}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Resume
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
